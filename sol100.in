@@ -1,0 +1,35 @@
+################## Start bunch #######################
+     Eo=100;# energy in keV
+      G =(Eo+511)/511;
+    betas=sqrt(1-G^-2);
+    setfile("beam","particle.gdf");  # initial beam parameters
+    #settransform ("wcs","z",-0.140,"beam");
+    #setparticles("beam",100,me,qe,-6*10^-9);
+    #setxdist("beam","g",0,0.00232,1,1);
+   #setydist("beam","g",0,0.00237,1,1);
+    #setzdist("beam","g",0,0.009,1,1);
+    #setGBxdist("beam","g",0,0.0113,1,1); #0.0113
+    #setGBydist("beam","g",0,0.01192,1,1);#0.01192
+    #setGdist("beam","g",G,4/511,1,1);
+    #SetGBxemittance("beam",0.000011084);#0.000011084
+    #SetGByemittance("beam",0.000011104);#0.000011104
+  
+###################inputs#########################
+   energy = 100; #in keV
+   rm =511;# rest mass
+   gamma = (energy+rm)/rm ; # value of gamma
+#   zend = 0.55;#First diagnostic box/ screen is at a distance of 1.420, 2nd diag. box
+
+######################################################## 
+
+
+map1D_B("wcs","z",0.590,"bsol1D.gdf","z","Bz",Bfac);  #  Start value 0.022478
+
+
+#output
+        
+#  tout(0,15e-009,0.01e-008); #9.18 ;
+
+ tout(5e-09);
+
+#screen("wcs","I",1.5);
